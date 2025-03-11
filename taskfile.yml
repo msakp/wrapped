@@ -1,0 +1,15 @@
+version: '3'
+
+tasks:
+  build:
+    internal: true
+    cmds:
+      - go build -o bin/test main.go
+    silent: true
+
+  run:
+    desc: run package test
+    cmds:
+      - task: build
+      - ./bin/test
+    silent: true
