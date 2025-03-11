@@ -4,7 +4,7 @@ tasks:
   build:
     internal: true
     cmds:
-      - go build -o bin/test main.go
+      - go build -o bin/test cmd/main.go
     silent: true
 
   run:
