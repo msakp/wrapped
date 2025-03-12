@@ -46,4 +46,6 @@ fmt.Printf("%#v\n", bookV)
 
 ## TODO
 - multiple input struct support 
+- pointer fields support
 - tag support for more flexibility
+- inner struct wrapping support
