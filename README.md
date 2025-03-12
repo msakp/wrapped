@@ -9,27 +9,37 @@
 
 for given structs **Book** and **BookView**:
 ```go
-type Book struct{
-	ID     int
-	Title  string
-	Cost   int
+type Book struct {
+	ID                int
+	Title             string
+	Cost              int
+	SomeUnwantedField int
 }
 
-type BookView struct{
-	Id     int
-	Title  string
-	cost   int
+type BookView struct {
+	Id             int
+	Title          string
+	Cost           int
+	OtherField     string
 }
 
 ```
 ```go
-book := Book{ID: 10, Title: "Book", Cost: 200}
+book := Book{
+		ID: 10,
+		Title: "Book",
+		Cost: 200,
+		SomeUnwantedField: 1000,
+}
 
 bookV := wrapped.To[BookView](&book)
 
-fmt.Printf("bookView: %#v\n", bookV)
-/*
-bookView: &main.BookView{Id:10, Title:"Book", cost:200}
+// can acess bookV fields and methods
+_ = bookV.Cost
+bookV.OtherField = "yo"
+
+fmt.Printf("%#v\n", bookV)
+
 */
 ```
 
