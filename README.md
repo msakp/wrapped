@@ -39,7 +39,8 @@ _ = bookV.Cost
 bookV.OtherField = "yo"
 
 fmt.Printf("%#v\n", bookV)
-
+*/
+&main.BookView{Id:10, Title:"Book", Cost:200, OtherField:"yo"}
 */
 ```
 
